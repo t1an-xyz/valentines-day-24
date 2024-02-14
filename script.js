@@ -48,6 +48,8 @@ submitBtn.addEventListener('click', () => {
         if (p <= 0) {
             out_label.innerText = `You should confess if you're more than ${p}% confident that they like you back. You must be really in love...Go for it! 💞`
         }
+        else if (p >= 100)
+            out_label.innerText = `You should confess if you're more than ${p}% confident that they like you back. Yeah...Maybe don't. 😬`;
         else
             out_label.innerText = `You should confess if you're more than ${p}% confident that they like you back! 💞`;
     }

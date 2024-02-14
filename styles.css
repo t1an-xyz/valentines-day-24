@@ -15,6 +15,7 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+    margin: 0px;
 }
 
 body {
@@ -74,7 +75,7 @@ footer {
     max-width: 800px;
     color: var(--secondary-text-color);
     flex: 0 0 auto;
-    line-height: 3rem;
+    line-height: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-self: center;
