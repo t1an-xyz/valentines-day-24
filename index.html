@@ -4,29 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Happy Valentine's Day!</title>
+    <title>💕 Happy Valentine's Day! 💕</title>
 </head>
 <body>
     <main>
-        <h1>Happy Valentine's Day!</h1>
+        <h1>💕 Happy Valentine's Day! 💕</h1>
         <h3>Should you tell your crush?</h3>
         <p>Ever wondered if you should confess to your crush? Well to celebrate Valentine's Day, I've created a tool to you out! Just answer the questions below!</p>
 
         <form>
             <label for="tell-yes">How would you feel if you confessed and they said yes? (−10 - 10, where -10 is the worst, 10 is the best)</label>
-            <input type="number" id="tell-yes" max="10" min="-10">
+            <input type="number" id="tell-yes" max="10" min="-10" required>
 
             <label for="tell-no">How would you feel if you confessed and they said no? (−10-10)</label>
-            <input type="number" id="tell-no" max="10" min="-10">
+            <input type="number" id="tell-no" max="10" min="-10" required>
 
             <label for="dont-tell">How do you feel about not saying anything? (E.g. do you feel stressed? nervous? relieved? etc.) (−10-10)</label>
-            <input type="number" id="dont-tell" max="10" min="-10">
+            <input type="number" id="dont-tell" max="10" min="-10" required>
 
-            <button type="button">Tell Me</button>
+            <button type="button" id="submit">Tell Me</button>
         </form>
+        <section id="results">
+            <hr>
+            <h2>Results</h2>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Says Yes</th>
+                    <th>Says No</th>
+                </tr>
+                <tr>
+                    <th>Confess</th>
+                    <td id="yes-yes"></td>
+                    <td id="yes-no"></td>
+                </tr>
+                <tr>
+                    <th>Don't Confess</th>
+                    <td id="no-yes"></td>
+                    <td id="no-no"></td>
+                </tr>
+            </table>
+            <div id="equation">
+                \[
+                \begin{aligned}
+                    E_{confess} &= ap + b(1-p) \\
+                    E_{don't\ confess} &= c \\
+                    ap + b(1-p) &= c \\
+                    p &= \frac{c-b}{a-b}
+                \end{aligned}
+                \]
+            </div>
+            <h4 id="confidence">You should confess if you are more than XX% sure that they like you back. Good luck!</h4>
+        </section>
     </main>
     <footer>
-
+        <span class="left-footer">Made by Theo</span>
+        <div class="right-footer">
+            <img class="github-mark" src="assets/github-mark.svg" alt="GitHub logo" width="36px">
+        </div>
     </footer>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
